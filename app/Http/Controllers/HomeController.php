@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\ActivityLog;
 class HomeController extends Controller
 {
     /**
@@ -31,4 +31,9 @@ class HomeController extends Controller
         return view('cv');
     }
 
+    public function aktivitas(){
+        $activity = ActivityLog::with('user')->limit(10)->orderBy('id','DESC')->get();
+
+        return view('activitylog', compact('activity'));
+    }
 }

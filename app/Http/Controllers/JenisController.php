@@ -42,7 +42,7 @@ class JenisController extends Controller
         ]);
 
         Jenis::create($request->all());
-
+        activity()->log('Menambah Jenis Barang');
         return redirect('/jenis')->with('status', 'Data Berhasil Ditambahkan');
     }
 
@@ -87,6 +87,7 @@ class JenisController extends Controller
                     'kode_jenis' =>$request->kode_jenis,
                     'nama_jenis' =>$request->nama_jenis
                 ]);
+                activity()->log('Mengedit Jenis Barang');
                 return redirect('/jenis')->with('status', 'Data Jenis Telah Diubah!');
     }
 
@@ -99,6 +100,7 @@ class JenisController extends Controller
     public function destroy(Jenis $jenis)
     {
         Jenis::destroy($jenis->id);
+        activity()->log('Menghapus Jenis Barang');
         return redirect('/jenis')->with('status', 'Data Berhasil Dihapus');
 
     return view('jenis.index', compact('jenis'));

@@ -52,7 +52,7 @@ class BarangController extends Controller
         ]);
 
         Barang::create($request->all());
-
+        activity()->log('Menambah Data Barang');
         return redirect('/barang')->with('status', 'Data Berhasil Ditambahkan');
     }
 
@@ -65,6 +65,7 @@ class BarangController extends Controller
     public function show($id)
     {
         $barang = Barang::find($id);
+        activity()->log('Melihat Data Barang');
         return view('barang.show',compact('barang'));
 
     }
@@ -78,6 +79,7 @@ class BarangController extends Controller
     public function edit(Barang $barang)
     {
         $jenis = Jenis::orderBy('nama_jenis', 'asc')->get();
+        
         return view('barang.edit', compact('barang', 'jenis'));
     }
 
@@ -108,6 +110,7 @@ class BarangController extends Controller
                     'stock_barang' =>$request->stock_barang,
                     'keterangan' =>$request->keterangan,
                 ]);
+                activity()->log('Mengedit Data Barang');
                 return redirect('/barang')->with('status', 'Data Barang Telah Diubah!');
     }
 
@@ -120,6 +123,7 @@ class BarangController extends Controller
     public function destroy(Barang $barang)
     {
         Barang::destroy($barang->id);
+        activity()->log('Menghapus Data Barang');
         return redirect('/barang')->with('status', 'Data Berhasil Dihapus');
 
     return view('barang.index', compact('barang'));

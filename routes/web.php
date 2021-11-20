@@ -42,4 +42,5 @@ Route::put('/jenis/{jenis}', 'JenisController@update')->name('jenis.update');
 Route::get('/jenis/destroy/{jenis}', 'JenisController@destroy')->name('jenis.destroy');
 
 Route::get('/CV', 'HomeController@cv')->name('cv');
+Route::get('/activitylog', 'HomeController@aktivitas')->name('log');
 });
