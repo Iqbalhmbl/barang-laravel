@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $admin = User::create([
-            'name' => 'Iqbal',
+            'name' => 'Ini Admin',
             'role_name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
@@ -22,5 +22,14 @@ class UserSeeder extends Seeder
         ]);
 
         $admin->assignRole('admin');
+
+        $staff = User::create([
+            'name' => 'Ini Staff',
+            'role_name' => 'staff',
+            'email' => 'staff@gmail.com',
+            'password' => bcrypt('12345678'),
+            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+        $staff->assignRole('staff');
     }
 }

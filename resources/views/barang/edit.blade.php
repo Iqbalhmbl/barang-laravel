@@ -22,7 +22,7 @@
                 @endif
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Kode Barang</label>
-                        <input type="text" name="kode_barang" class="form-control"  aria-describedby="emailHelp" value="{{$barang->kode_barang}}">
+                        <input type="text" name="kode_barang" class="form-control"  aria-describedby="emailHelp" value="{{$barang->kode_barang}}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Jenis Barang</label>
@@ -34,15 +34,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
-                        <input type="text" name="nama_barang" class="form-control" value="{{$barang->nama_barang}}">
+                        <input type="text" name="nama_barang" class="form-control" value="{{$barang->nama_barang}}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Harga Barang</label>
-                        <input type="text" name="harga_barang" class="form-control" value="{{$barang->harga_barang}}">
+                        <input type="text" name="harga_barang" class="form-control" value="{{$barang->harga_barang}}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Stock Barang</label>
-                        <input type="text" name="stock_barang" class="form-control" value="{{$barang->stock_barang}}">
+                        <input type="text" name="stock_barang" class="form-control" value="{{$barang->stock_barang}}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Keterangan</label>

@@ -12,11 +12,11 @@
                 @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Kode Jenis Barang</label>
-                        <input type="text" name="kode_jenis" class="form-control"  aria-describedby="emailHelp" value="{{$jenis->kode_jenis}}">
+                        <input type="text" name="kode_jenis" class="form-control"  aria-describedby="emailHelp" value="{{$jenis->kode_jenis}}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Nama Jenis Barang</label>
-                        <input type="text" name="nama_jenis" class="form-control" value="{{$jenis->nama_jenis}}" >
+                        <input type="text" name="nama_jenis" class="form-control" value="{{$jenis->nama_jenis}}" required>
                     </div>
                     
                     <button type="submit" class="btn btn btn-secondary btn-sm">Ubah</button>
