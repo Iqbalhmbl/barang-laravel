@@ -124,4 +124,20 @@ class BarangController extends Controller
 
     return view('barang.index', compact('barang'));
     }
+
+    
+    public function guest()
+    {
+        $barang = DB::table('jenis_barang')
+        ->join('tb_barang','jenis_barang.id', '=', 'tb_barang.jenis_id')
+        ->select('tb_barang.*','jenis_barang.nama_jenis')
+        ->get();
+        return view('barang-guest', ['barang'=> $barang]);
+    }
+
+    public function showguest($id)
+    {
+        $barang = Barang::find($id);
+        return view('show-guest',compact('barang'));
+    }
 }

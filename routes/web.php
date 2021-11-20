@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth/login');
+Route::get('/', 'BarangController@guest' ,function () {
+    return view('barang-guest');
 });
 
-
+Route::get('/barang-guest', 'BarangController@guest')->name('guest');
+Route::get('/barang-guest/show-guest/{id}', 'BarangController@showguest')->name('showguest');
 
 
 
@@ -41,5 +42,4 @@ Route::put('/jenis/{jenis}', 'JenisController@update')->name('jenis.update');
 Route::get('/jenis/destroy/{jenis}', 'JenisController@destroy')->name('jenis.destroy');
 
 Route::get('/CV', 'HomeController@cv')->name('cv');
-
 });
